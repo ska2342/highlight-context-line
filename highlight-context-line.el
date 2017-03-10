@@ -1,12 +1,14 @@
-;;; highlight-context-line.el --- Highlight last visible line when scrolling
+;;; highlight-context-line.el --- Improve orientation when scrolling
 
 ;; Copyright (C) 2002-2017 by Stefan Kamphausen
-;; Authors: Stefan Kamphausen <www.skamphausen.de>
+;; Author: Stefan Kamphausen <www.skamphausen.de>
+;; URL: https://github.com/ska2342/highlight-context-line/
 ;; Created: 2002
+;; Version: 2.0beta2
 ;; Keywords: faces, services, user
 
-(defvar highlight-context-line-version "2.0-beta1"
-  "Version number of highlight-context-line")
+(defvar highlight-context-line-version "2.0beta2"
+  "Version number of highlight-context-line.")
 
 ;; This file is not part of Emacs.
 
@@ -26,13 +28,9 @@
 
 ;;; Commentary:
 
-;; HighlightContextLine on the Web:
-;; Main page:
-;; http://www.github.com/ska2342/highlight-context-line/
-
 ;; This minor mode highlights the last visible line when scrolling
-;; full windows. It was inspired by the postscript viewer gv which
-;; does a similar thing using a line across the screen. It honours the
+;; full windows.  It was inspired by the postscript viewer gv which
+;; does a similar thing using a line across the screen.  It honours the
 ;; variable next-screen-context-lines.
 
 ;;; ChangeLog
@@ -55,8 +53,8 @@
   "Highlight last visible line when scrolling."
   :tag "Highlight Context"
   :link '(url-link
-          :tag "Home Page" 
-          "http://www.github.com/ska2342/highlight-context-line/")
+          :tag "Home Page"
+          "https://www.github.com/ska2342/highlight-context-line/")
   :link '(emacs-commentary-link
           :tag "Commentary in highlight-context-line.el"
           "highlight-context-line.el")
@@ -103,15 +101,16 @@ the context line."
               #'highlight-context-line-unhighlight)))
 
 
-(defun highlight-context-get-scroll-direction ()
-  "Returns 1 for scroll up, -1 for scroll down and nil if not
+(defun highlight-context-line-get-scroll-direction ()
+  "Detects scrolling and direction.
+Returns 1 for scroll up, -1 for scroll down and nil if not
 scrolling at all."
   (cond
    ((eq this-command 'scroll-up-command) 1)
    ((eq this-command 'scroll-down-command) -1)))
 
 (defun highlight-context-line-highlight* (direction)
-  "Find the line to highlight and move the overlay."
+  "Find the line to highlight in DIRECTION and move the overlay."
   (save-excursion
     ;; Jump to the line we want to highlight
     (move-to-window-line (* direction
@@ -131,13 +130,13 @@ scrolling at all."
   "Highlight the context line after scrolling.
 Context line is the last line that was visible before starting to
 scroll in the respective direction."
-  (ignore-errors 
+  (ignore-errors
       (let ((scroll-direction
-             (highlight-context-get-scroll-direction)))
+             (highlight-context-line-get-scroll-direction)))
         (when scroll-direction
           ;; it was a scrolling
           (highlight-context-line-highlight* scroll-direction)))))
 
 
 (provide 'highlight-context-line)
-;; highlight-context-line.el ends here
+;;; highlight-context-line.el ends here
