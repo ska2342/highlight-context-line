@@ -1,16 +1,14 @@
 ;;; highlight-context-line.el --- Improve orientation when scrolling
 
 ;; Copyright (C) 2002-2017 by Stefan Kamphausen
+
 ;; Author: Stefan Kamphausen <www.skamphausen.de>
-;; URL: https://github.com/ska2342/highlight-context-line/
+;; Homepage: https://github.com/ska2342/highlight-context-line/
 ;; Created: 2002
 ;; Version: 2.0beta2
 ;; Keywords: faces, services, user
 
-(defvar highlight-context-line-version "2.0beta2"
-  "Version number of highlight-context-line.")
-
-;; This file is not part of Emacs.
+;; This file is not part of GNU Emacs.
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -34,6 +32,7 @@
 ;; variable next-screen-context-lines.
 
 ;;; ChangeLog
+
 ;; 2.0   March 2017
 ;;       - Total rewrite
 ;;       - No more XEmacs support, I am afraid
@@ -48,6 +47,9 @@
 ;; elisp
 
 ;;; Code:
+
+(defvar highlight-context-line-version "2.0beta2"
+  "Version number of highlight-context-line.")
 
 (defgroup highlight-context-line nil
   "Highlight last visible line when scrolling."
