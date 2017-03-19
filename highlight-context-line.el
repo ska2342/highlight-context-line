@@ -5,7 +5,7 @@
 ;; Author: Stefan Kamphausen <www.skamphausen.de>
 ;; Homepage: https://github.com/ska2342/highlight-context-line/
 ;; Created: 2002
-;; Version: 2.0beta2
+;; Version: 2.0beta3
 ;; Keywords: faces, services, user
 
 ;; This file is not part of GNU Emacs.
@@ -30,6 +30,12 @@
 ;; full windows.  It was inspired by the postscript viewer gv which
 ;; does a similar thing using a line across the screen.  It honours the
 ;; variable next-screen-context-lines.
+;;
+;; Enable it for the current session with
+;;     M-x highlight-context-line-mode
+;; or permanently by putting
+;;     (highlight-context-line-mode 1)
+;; in your init file.
 
 ;;; ChangeLog
 
@@ -48,7 +54,7 @@
 
 ;;; Code:
 
-(defvar highlight-context-line-version "2.0beta2"
+(defvar highlight-context-line-version "2.0beta3"
   "Version number of highlight-context-line.")
 
 (defgroup highlight-context-line nil
