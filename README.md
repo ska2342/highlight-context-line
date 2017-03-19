@@ -15,6 +15,10 @@ context line for scrolling down.
 When enabled, this minor mode just highlights the context line. On the
 next keypress the highlight is removed.
 
+## That sounds weird. Just show me.
+
+![Animated GIF showing the effect](https://raw.githubusercontent.com/ska2342/highlight-context-line/master/highlight-context-line-demo.gif)
+
 ## Inspiration
 
 Back then when the first version of this little minor mode was
