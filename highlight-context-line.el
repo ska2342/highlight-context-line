@@ -131,8 +131,9 @@ scrolling at all."
 
 (defun highlight-context-line-unhighlight ()
   "Delete the overlay again."
-  (when highlight-context-line-overlay
-    (delete-overlay highlight-context-line-overlay)))
+  (ignore-errors
+    (when highlight-context-line-overlay
+      (delete-overlay highlight-context-line-overlay))))
 
 (defun highlight-context-line-highlight ()
   "Highlight the context line after scrolling.
