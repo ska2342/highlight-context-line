@@ -5,7 +5,7 @@
 ;; Author: Stefan Kamphausen <www.skamphausen.de>
 ;; Homepage: https://github.com/ska2342/highlight-context-line/
 ;; Created: 2002
-;; Version: 2.0beta3
+;; Version: 2.0
 ;; Keywords: faces, services, user
 
 ;; This file is not part of GNU Emacs.
