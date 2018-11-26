@@ -3,6 +3,7 @@
 A minor mode for Emacs to improve orientation when scrolling.
 
 [![Melpa Status](http://melpa.org/packages/highlight-context-line-badge.svg)](http://melpa.org/#/highlight-context-line)
+[![MELPA Stable](https://stable.melpa.org/packages/highlight-context-line-badge.svg)](https://stable.melpa.org/#/highlight-context-line)
 
 ## Context Line
 
